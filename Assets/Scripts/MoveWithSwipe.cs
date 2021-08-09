@@ -1,4 +1,4 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,7 +9,6 @@ public class MoveWithSwipe : MonoBehaviour
     public SwipeTest swipeTest;
     private Animator animator;
     public float jumpspeed = 3;
-    private float jumpBuffer;
     private float mytime;
     private bool isground=true;
     
@@ -24,7 +23,7 @@ public class MoveWithSwipe : MonoBehaviour
     {
         mytime+=Time.deltaTime;
         if(swipeTest.swipeUp &&  mytime> 3.0f && isground ){
-            // controller.Move(Vector3.up*jumpspeed);
+
             animator.SetBool("jumping",true);
             isground=false;
             StartCoroutine(myjump(Vector3.up*jumpspeed));

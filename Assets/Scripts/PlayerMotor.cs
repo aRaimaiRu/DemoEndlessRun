@@ -32,12 +32,10 @@ public class PlayerMotor : MonoBehaviour
             return;
         }
         moveVector = Vector3.zero;
-        if(controller.isGrounded){
-            verticalVelocity = -0.5f;
-        }else
-        {
-            verticalVelocity -= gravity;
-        }
+        Gravity();
+        Movement();
+    }
+    private void Movement(){
         //X
         moveVector.x = Input.GetAxisRaw("Horizontal")*speed;
         if(moveVector.x ==0.0f){
@@ -49,6 +47,16 @@ public class PlayerMotor : MonoBehaviour
         //Z
         moveVector.z = speed;
         controller.Move(moveVector*Time.deltaTime);
+
+    }
+    private void Gravity(){
+        if(controller.isGrounded){
+            verticalVelocity = -0.5f;
+        }else
+        {
+            verticalVelocity -= gravity;
+        }
+
     }
     public void SetSpeed(float modifier){
         speed =5.0f+modifier;
