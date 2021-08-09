@@ -7,11 +7,8 @@ public class TilesManager : MonoBehaviour
     public GameObject[] tilePrefabs;
     private Transform playerTransform;
     private float spawnZ = 0.0f;
-    // Start is called before the first frame update
     private float tileLength = 10.0f;
     private int amnTilesOnScreen = 7;
-    [SerializeField]
-    private float xOffset=0;
     [SerializeField]
     private Transform startingPoint;
     private int lastprefabsIndex = 0;

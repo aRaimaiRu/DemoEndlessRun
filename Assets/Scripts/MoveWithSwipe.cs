@@ -43,7 +43,6 @@ public class MoveWithSwipe : MonoBehaviour
         
     }
     private void OnControllerColliderHit(ControllerColliderHit hit) {
-        Debug.Log(hit.gameObject.tag);
         if(hit.gameObject.tag=="Ground"){
             animator.SetBool("jumping",false);
             isground = true;
