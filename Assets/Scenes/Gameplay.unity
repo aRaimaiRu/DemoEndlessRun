@@ -753,7 +753,6 @@ MonoBehaviour:
   - {fileID: 4296001731163398186, guid: 72906e8c431f41843b069174c0aa21b0, type: 3}
   - {fileID: 1763766256922520949, guid: 053ad1f78953b83479e04ac0c3f2ef70, type: 3}
   - {fileID: 4121441205916967581, guid: 7c13a763575360d45a3dc25554cc3a55, type: 3}
-  xOffset: 0
   startingPoint: {fileID: 1500707212}
 --- !u!4 &884210199
 Transform:
@@ -1058,7 +1057,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swipeTest: {fileID: 0}
-  jumpspeed: 0.3
+  jumpspeed: 1
 --- !u!1 &1427023672
 GameObject:
   m_ObjectHideFlags: 0

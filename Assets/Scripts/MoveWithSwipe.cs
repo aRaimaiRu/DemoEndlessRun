@@ -32,7 +32,7 @@ public class MoveWithSwipe : MonoBehaviour
     }
     private IEnumerator myjump(Vector3 jumpto){
         for(int i=0;i<20;i++){
-            controller.Move(jumpto);
+            controller.Move(jumpto*i/100);
             yield return null;
         }
         
