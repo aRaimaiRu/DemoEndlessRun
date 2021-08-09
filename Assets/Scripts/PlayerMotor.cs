@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 public class PlayerMotor : MonoBehaviour
 {
+    private Animator animator;
+    public SwipeTest swipeTest;
     private CharacterController controller;
     private Vector3 moveVector;
     private float speed = 5.0f;
@@ -12,11 +14,14 @@ public class PlayerMotor : MonoBehaviour
     private bool isDeath = false;
     [SerializeField]
     private LayerMask ObstacleLayer;
+    public bool isground;
     public float mytime =0;
-    private bool tap,swipteLeft,swipeRight,swipeUp,swipeDown;
-    private Vector2 swipeDelta,startTourch;
+    public float jumpSpeed=10.0f;
+
     void Start()
     {
+        animator = GetComponent<Animator>();
+        swipeTest = GetComponent<SwipeTest>();
         controller = GetComponent<CharacterController>();
         Input.gyro.enabled = true;
     }
@@ -33,6 +38,13 @@ public class PlayerMotor : MonoBehaviour
         }
         moveVector = Vector3.zero;
         Gravity();
+         if(swipeTest.swipeUp &&  mytime> 3.0f && isground ){
+
+            animator.SetBool("jumping",true);
+            isground=false;
+            verticalVelocity = jumpSpeed;
+            
+        }
         Movement();
     }
     private void Movement(){
@@ -50,7 +62,7 @@ public class PlayerMotor : MonoBehaviour
 
     }
     private void Gravity(){
-        if(controller.isGrounded){
+        if(isground){
             verticalVelocity = -0.5f;
         }else
         {
@@ -67,6 +79,13 @@ public class PlayerMotor : MonoBehaviour
         {
             Death();
         }
+    }
+        private void OnControllerColliderHit(ControllerColliderHit hit) {
+        if(hit.gameObject.tag=="Ground"){
+            animator.SetBool("jumping",false);
+            isground = true;
+        }
+
     }
     //Bug
     // private void OnControllerColliderHit(ControllerColliderHit hit) {

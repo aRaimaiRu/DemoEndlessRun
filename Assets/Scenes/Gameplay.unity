@@ -980,11 +980,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5501389908b81d4dbb163caf5a4609e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swipeTest: {fileID: 0}
   gravity: 0
   ObstacleLayer:
     serializedVersion: 2
     m_Bits: 128
+  isground: 0
   mytime: 0
+  jumpSpeed: 10
 --- !u!143 &1224199853
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1044,20 +1047,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400008, guid: 6e00ebb4a259fe043b183d49331ce18a, type: 3}
   m_PrefabInstance: {fileID: 1838740316}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1224199858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1224199850}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6025c3c0f2fae524489e62ca4d032200, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  swipeTest: {fileID: 0}
-  jumpspeed: 1
 --- !u!1 &1427023672
 GameObject:
   m_ObjectHideFlags: 0
