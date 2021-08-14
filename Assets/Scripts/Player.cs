@@ -12,6 +12,10 @@ public class Player : MonoBehaviour
     public float gravity = 12.0f;
     public float mytime =0;
     private float animationDuration = 3.0f;
+    [SerializeField]
+    private LayerMask ObstacleLayer;
+    public bool isground;
+    public bool isDeath;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +26,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        mytime += Time.deltaTime;
         if(mytime < animationDuration){
             controller.Move(Vector3.forward*Time.deltaTime);
             return;
@@ -53,5 +58,22 @@ public class Player : MonoBehaviour
             verticalVelocity -= gravity;
         }
 
+    }
+    private void checkColli(){
+        if(Physics.Raycast(this.transform.position,this.transform.forward,GetComponent<CharacterController>().radius+0.1f,ObstacleLayer))
+        {
+            Death();
+        }
+    }
+        private void OnControllerColliderHit(ControllerColliderHit hit) {
+        if(hit.gameObject.tag=="Ground"){
+            animator.SetBool("jumping",false);
+            isground = true;
+        }
+
+    }
+    private void Death(){
+        isDeath=true;
+        // GetComponent<Score>().OnDeath();
     }
 }
