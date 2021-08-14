@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     private float verticalVelocity = 0.0f;
     public float speed = 5.0f;
     public float gravity = 12.0f;
+    public float mytime =0;
+    private float animationDuration = 3.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,11 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(mytime < animationDuration){
+            controller.Move(Vector3.forward*Time.deltaTime);
+            return;
+        }
+        moveVector = Vector3.zero;
         Gravity();
         Movement();
     }
