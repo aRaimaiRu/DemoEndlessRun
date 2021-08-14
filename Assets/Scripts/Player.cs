@@ -76,4 +76,9 @@ public class Player : MonoBehaviour
         isDeath=true;
         // GetComponent<Score>().OnDeath();
     }
+    public void SetSpeed(float modifier){
+        speed =10.0f+modifier;
+
+    }
+    
 }
