@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
             return;
         }
         moveVector = Vector3.zero;
+        checkColli();
         Gravity();
         Movement();
     }
@@ -65,7 +66,7 @@ public class Player : MonoBehaviour
             Death();
         }
     }
-        private void OnControllerColliderHit(ControllerColliderHit hit) {
+    private void OnControllerColliderHit(ControllerColliderHit hit) {
         if(hit.gameObject.tag=="Ground"){
             animator.SetBool("jumping",false);
             isground = true;
@@ -74,7 +75,7 @@ public class Player : MonoBehaviour
     }
     private void Death(){
         isDeath=true;
-        // GetComponent<Score>().OnDeath();
+        GetComponent<Score>().OnDeath();
     }
     public void SetSpeed(float modifier){
         speed =10.0f+modifier;

@@ -5,13 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/Menu.unity
-    guid: 3775d4b0fb6f4a74bb202aeebb117b9e
-  - enabled: 1
-    path: Assets/Scenes/Gameplay.unity
-    guid: a68942624c9bc5248814b358db6d6a4c
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: Assets/Scenes/SwipeTest.unity
     guid: 4c7f36802b9044d449a667bb6a53ac1d
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 230ac6c2be7c63646aadc554343dbff0
   m_configObjects: {}

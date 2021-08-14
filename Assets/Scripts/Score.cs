@@ -10,7 +10,7 @@ public class Score : MonoBehaviour
     private int maxDifficultyLevel = 10;
     public Text ScoreText;
     private bool isDead = false;
-    // public DeathMenu deathMenu;
+    public DeathMenu deathMenu;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,12 +31,12 @@ public class Score : MonoBehaviour
         GetComponent<Player>().SetSpeed(difficultyLevel);
     }
 
-    // public void OnDeath(){
-    //     isDead=true;
-    //     if(score >PlayerPrefs.GetFloat("Highscore")){
-    //         PlayerPrefs.SetFloat("Highscore",score);
-    //     }
-    //     deathMenu.ToggleEndScore(score);
+    public void OnDeath(){
+        isDead=true;
+        if(score >PlayerPrefs.GetFloat("Highscore")){
+            PlayerPrefs.SetFloat("Highscore",score);
+        }
+        deathMenu.ToggleEndScore(score);
 
-    // }
+    }
 }
